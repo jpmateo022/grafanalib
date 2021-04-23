@@ -391,6 +391,7 @@ class Target(object):
     target = attr.ib(default="")
     instant = attr.ib(validator=instance_of(bool), default=False)
     datasource = attr.ib(default=None)
+    rawSql = attr.ib(default=None)
 
     def to_json_data(self):
         return {
@@ -406,6 +407,7 @@ class Target(object):
             'step': self.step,
             'instant': self.instant,
             'datasource': self.datasource,
+            'rawSql': self.rawSql
         }
 
 
